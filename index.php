@@ -1,6 +1,5 @@
 <?php
     $title = "NSO";
-    require_once "config/config.php";
     require_once "includes/header.php";
 ?>
     <section style="background: url(https://htmldemo.net/bonx/bonx/assets/img/bg/hero-bg1.webp); height: 780px">
