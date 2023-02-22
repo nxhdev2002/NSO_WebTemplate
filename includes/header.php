@@ -1,4 +1,9 @@
 <?php
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+} 
+
 include "config/config.php";
 ?>
 
@@ -11,9 +16,12 @@ include "config/config.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?= $_URL ?>/assets/css/main.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="<?= $_URL ?>/assets/js/main.js"></script>
     <title><?= $title . " - " . $_DESCRIPTION ?></title>
 </head>
 
@@ -24,7 +32,7 @@ include "config/config.php";
             <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Trang chủ <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="<?= $_URL ?>">Trang chủ <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -47,8 +55,12 @@ include "config/config.php";
             </div>
 
             <div>
-                <button class="btn btn-primary">Login</button>
-
+                <?php 
+                if (isset($_SESSION['is_login']) && $_SESSION['is_login'] === 1)
+                    echo '<i class="fa-solid fa-user"></i> '.$_SESSION['username'];
+                else 
+                    echo '<a class="btn btn-primary" href="/login.php">Đăng nhập</a> <a class="btn btn-danger" href="/register.php">Đăng ký</a>';
+                ?> 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>

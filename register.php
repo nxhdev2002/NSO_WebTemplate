@@ -2,7 +2,6 @@
 session_start();
 $title = "Đăng nhập";
 require_once("config/config.php");
-require_once "includes/header.php";
 if (isset($_SESSION['is_login']) && $_SESSION['is_login'] === 1) {
     header("location: /home.php");
     die();
@@ -14,27 +13,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['username']) && isset(
     $result = $dbConn->fetchColumn('SELECT password FROM player WHERE username = :name', ['name' => $user]);
     if ($result === NULL) {
         $error = "Tên đăng nhập không tồn tại!";
-        echo "<script>
-            showErrorDialog('Tên đăng nhập không tồn tại!')
-        </script>";
     } else if ($result !== $pass) {
         $error = "Sai mật khẩu. Vui lòng thử lại";
-        echo "<script>
-            showErrorDialog('Sai mật khẩu. Vui lòng thử lại')
-        </script>";
     } else {
         $_SESSION['is_login'] = 1;
         $_SESSION['username'] = $user;
-        echo "<script>
-            showAutoCloseDialog('Success', 'Đăng nhập thành công', () => {
-                window.location = '/index.php';
-            });
-        </script>";
+        header("location: /index.php");
     }
     
 }
+require_once "includes/header.php";
 ?>
-<div class="login" style="background: url(assets/images/hero-bg1.webp); height: 780px">
+<div class="login" style="background: url(https://htmldemo.net/bonx/bonx/assets/img/bg/hero-bg1.webp); height: 780px">
     <div class="align-items-center" style="display: flex; height: 100%">
         <div class="container">
             <div class="row justify-content-center">
