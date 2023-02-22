@@ -14,5 +14,5 @@ $pdo = new PDOConnector(
 $pdoConn = $pdo->connect('utf8', []); // charset, options
 $dbConn = new Mysql($pdoConn);
 
-$_URL = "http://localhost";
+$_URL = $_ENV['web_url'];
 $_DESCRIPTION = "HVN Comeback";
