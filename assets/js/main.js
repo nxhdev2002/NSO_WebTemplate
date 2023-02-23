@@ -6,7 +6,7 @@ const showErrorDialog = (message) => {
     Swal.fire({
         icon: 'error',
         title: 'Oops...',
-        text: 'Tên đăng nhập không tồn tại',
+        text: message,
     })
 }
 

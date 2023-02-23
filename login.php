@@ -3,7 +3,7 @@ session_start();
 $title = "Đăng nhập";
 require_once("config/config.php");
 require_once "includes/header.php";
-if (isset($_SESSION['is_login']) && $_SESSION['is_login'] === 1) {
+if (isset($_SESSION['is_login']) && $_SESSION['is_login'] !== 0) {
     header("location: /home.php");
     die();
 }
@@ -11,19 +11,19 @@ if (isset($_SESSION['is_login']) && $_SESSION['is_login'] === 1) {
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['username']) && isset($_POST['password'])) {
     $user = htmlspecialchars($_POST['username']);
 	$pass = htmlspecialchars($_POST['password']);
-    $result = $dbConn->fetchColumn('SELECT password FROM player WHERE username = :name', ['name' => $user]);
+    $result = $dbConn->fetchRow('SELECT id, password FROM player WHERE username = :name', ['name' => $user]);
     if ($result === NULL) {
         $error = "Tên đăng nhập không tồn tại!";
         echo "<script>
             showErrorDialog('Tên đăng nhập không tồn tại!')
         </script>";
-    } else if ($result !== $pass) {
+    } else if ($result['password'] !== $pass) {
         $error = "Sai mật khẩu. Vui lòng thử lại";
         echo "<script>
             showErrorDialog('Sai mật khẩu. Vui lòng thử lại')
         </script>";
     } else {
-        $_SESSION['is_login'] = 1;
+        $_SESSION['is_login'] = $result['id'];
         $_SESSION['username'] = $user;
         echo "<script>
             showAutoCloseDialog('Success', 'Đăng nhập thành công', () => {

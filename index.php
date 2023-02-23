@@ -10,7 +10,11 @@
                         <div class="col-6">
                             <h1 style="font-family: PoppinsRegular; font-size: 60px; visibility: visible; animation-duration: 1.1s; animation-delay: 0.1s; animation-name: fadeInUp;">Học Viện Ninja</h1>
                             <p style="font-size: 18px; font-family: PoppinsRegular; visibility: visible; animation-duration: 1.1s; animation-delay: 0.1s; animation-name: fadeInUp;">Tham gia thế giới nhẫn giả và hoá thân thành ninja nắm giữ sức mạnh nguyên tố ngay bây giờ!</p>
-                            <div class="btn btn-success" style="visibility: visible; animation-duration: 1.1s; animation-delay: 0.1s; animation-name: fadeInUp;"><img src="https://cdn-icons-png.flaticon.com/512/1185/1185771.png" width="25" height="25"> Play Now</div>
+                            <div class="btn btn-success" style="visibility: visible; animation-duration: 1.1s; animation-delay: 0.1s; animation-name: fadeInUp;">
+                                <a href="/download.php" style="text-decoration: none; color: black">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/1185/1185771.png" width="25" height="25"> Play Now
+                                </a>
+                            </div>
                         </div>
                         <div class="col-6" style="visibility: visible; animation-duration: 1.1s; animation-delay: 0.1s; animation-name: fadeInUp;">
                             <img src="<?= $_URL ?>/assets/images/3.png" width="600px" style="border-radius: 25px">

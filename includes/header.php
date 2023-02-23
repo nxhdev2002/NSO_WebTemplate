@@ -56,7 +56,7 @@ include "config/config.php";
 
             <div>
                 <?php 
-                if (isset($_SESSION['is_login']) && $_SESSION['is_login'] === 1)
+                if (isset($_SESSION['is_login']) && $_SESSION['is_login'] !== 0)
                     echo '<i class="fa-solid fa-user"></i> '.$_SESSION['username'];
                 else 
                     echo '<a class="btn btn-primary" href="/login.php">Đăng nhập</a> <a class="btn btn-danger" href="/register.php">Đăng ký</a>';
