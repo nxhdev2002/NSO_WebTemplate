@@ -32,9 +32,8 @@ if (!isset($_SESSION['is_login']) || $_SESSION['is_login'] === 0) {
                         <button class="btn btn-success checkout" data-id="<?= $cursor['id'] ?>" data-title="<?= $cursor['ten_vat_pham'] ?>">Mua</button>
                     </div>
                 </div>
-            <?
+            <?php
             }
-
             ?>
         </div>
     </div>

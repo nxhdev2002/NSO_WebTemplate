@@ -2,7 +2,7 @@
     $title = "NSO";
     require_once "includes/header.php";
 ?>
-    <section style="background: url(https://htmldemo.net/bonx/bonx/assets/img/bg/hero-bg1.webp); height: 780px; margin-top: -60px">
+    <section style="background: url(https://htmldemo.net/bonx/bonx/assets/img/bg/hero-bg1.webp); height: 100vh; margin-top: -60px">
         <div class="overlay" style="background: rgba(70,104,50,0.6); height: 100%">
             <div class="align-items-center" style="display: flex; height: 100%">
                 <div class="container">
@@ -24,7 +24,7 @@
             </div>
         </div>
     </section>
-    <section style="background: url(<?= $_URL ?>/assets/images/1.png) no-repeat; background-size: 100%; height: 780px">
+    <section style="background: url(<?= $_URL ?>/assets/images/1.png) no-repeat; background-size: 100%; height: 100vh">
         <div class="overlay" style="background: rgba(70,104,50,0.6); height: 100%">
             <div class="align-items-center" style="display: flex; height: 100%">
                 <div class="container">
