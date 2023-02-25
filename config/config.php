@@ -1,5 +1,8 @@
 <?php
 require_once "vendor/autoload.php";
+date_default_timezone_set('Asia/Bangkok');
+
+
 use \Simplon\Mysql\PDOConnector;
 use \Simplon\Mysql\Mysql;
 $dotenv = Dotenv\Dotenv::createImmutable(getcwd());
@@ -16,3 +19,4 @@ $dbConn = new Mysql($pdoConn);
 
 $_URL = $_ENV['web_url'];
 $_DESCRIPTION = "HVN Comeback";
+

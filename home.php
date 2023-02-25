@@ -29,7 +29,7 @@ if (!isset($_SESSION['is_login']) || $_SESSION['is_login'] === 0) {
                         <div class="detail"><?= $cursor['chi_tiet_webshop'] ?></div>
                         <div class="cost"><i class="fa-solid fa-dong-sign"></i></i><?= $cursor['gia_coin'] ?></div>
                         <div class="dropdown-divider"></div>
-                        <button class="btn btn-success">Mua</button>
+                        <button class="btn btn-success checkout" data-id="<?= $cursor['id'] ?>" data-title="<?= $cursor['ten_vat_pham'] ?>">Mua</button>
                     </div>
                 </div>
             <?

@@ -59,11 +59,11 @@ include "config/config.php";
                 ?>
                     <ul class="navbar-nav" style="align-self: flex-end;">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="userNavbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Xin chào, <?= $user['username'] ?>
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#"><i class="fa-solid fa-dong-sign"></i> <?= $user['luong'] ?></a>
+                            <div class="dropdown-menu" aria-labelledby="userNavbarDropdown">
+                                <a class="dropdown-item" href="#"><i class="fa-solid fa-dong-sign"></i> <?= $user['coin'] ?></a>
                                 <a class="dropdown-item" href="/home.php">Trang chủ</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="/chpasswd.php">Đổi mật khẩu</a>
